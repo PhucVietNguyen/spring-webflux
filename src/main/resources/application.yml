@@ -1,0 +1,16 @@
+infrastructure:
+  host: localhost
+spring:
+  application:
+    name: spring-web-flux
+  r2dbc:
+    url: r2dbc:postgresql://${infrastructure.host}:5432/auth?currentSchema=webflux
+    username: postgres
+    password: 123456
+    initialization-mode: never
+    pool:
+      enabled: true
+      initial-size: 50
+      max-size: 100
+server:
+  port: 8082
